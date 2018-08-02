@@ -12,4 +12,4 @@ Example query :
 
 Query : AND mystery AND NOT horror
 
-This results in a list of all the mystery movies that were not horro movies along with the snippet, reviewer and rate.
+This results in a list of all the mystery movies that were not horror movies along with the snippet, reviewer and rate.
