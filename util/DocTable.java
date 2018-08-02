@@ -99,8 +99,7 @@ public class DocTable {
 		
 		try
 		{
-		//Pattern pat = Pattern.compile("Capsule review:(.+?)</P>");
-		Pattern pat = Pattern.compile("<P>(.+?)</P>");
+				Pattern pat = Pattern.compile("<P>(.+?)</P>");
 		Matcher match = pat.matcher(temp2);
 		while(match.find())
 		{
@@ -155,25 +154,21 @@ public class DocTable {
 								if(snippetLength>50)
 								{
 									flag = true;
-									//break;
-								}
+																	}
 							}
 						}
 						else
 						{
 							flag = true;
-							//break;
-						}
+													}
 						
 					}
 
-					//addSnippet(strSnippet,);
-				}
+									}
 				else
 				{
 					flag = true;
-					//break;
-				}
+									}
 			}
 			else
 				//capsule value not present
@@ -206,18 +201,15 @@ public class DocTable {
 						else
 						{
 							flag = true;
-							//break;
-						}
+													}
 						
 					}
 
-					//addSnippet(strSnippet,);
-				}
+									}
 				else
 				{
 					flag = true;
-					//break;
-				}
+									}
 
 			}
 		

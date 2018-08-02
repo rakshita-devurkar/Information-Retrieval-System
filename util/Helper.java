@@ -41,18 +41,15 @@ public class Helper {
 		// TODO Auto-generated method stub
 		//changing content into lowers case
 				temp = temp.toLowerCase();
-				//System.out.println(temp);
-				
+								
 				
 				temp = removeSingleChar(temp);
 				removeHyphen(temp);
-				//temp = temp.replaceAll("[-]"," ");
-				removeStopWords(temp);
+								removeStopWords(temp);
 				removeBrackets();
 				removeApostrophes();
 				removeSpecialChar();
-				//removeHyphen();
-				
+								
 				performStemming ();
 				lexicographicOrder(); 
 				
@@ -74,13 +71,7 @@ public class Helper {
 		LexoIndexList.clear();
 		LexoIndexList.addAll(LexoIndexRemoveDuplicate);
 		
-		//System.out.println("Sorted Dictionary");
-		for(String currIndex : LexoIndexList)
-		{
-			//if(currIndex.length() != 0)
-			//System.out.print(currIndex+" ");
-		}
-		//System.out.println();
+				
 		
 		
 	}
@@ -246,8 +237,7 @@ public class Helper {
 		
 		//removing single character
 		
-		//correctStr = temp2.replaceAll("[-]"," ");
-		for(int currentIndex = 0;currentIndex < IndexArray.length;currentIndex++)
+				for(int currentIndex = 0;currentIndex < IndexArray.length;currentIndex++)
 		{
 			correctStr = IndexArray[currentIndex];
 			if(!correctStr.isEmpty())
@@ -307,12 +297,7 @@ public class Helper {
 			
 			String abc = array[currentIndex].replaceAll("[']","");
 			 abc = abc.replaceAll("[\"]","");
-			//String abc = array[currentIndex].replaceAll("[,\\.\\?:;!@\\*]","");
-			 //abc = abc.replaceAll("[{}]","");
-			 //abc = abc.replaceAll("[\\[\\]]","");
-			 
-			//abc = abc.replaceAll(".*?\\).*?","");
-			array[currentIndex] = abc;		
+						 			array[currentIndex] = abc;		
 			
 		}
 		/*System.out.println("Apostrophes");
@@ -328,15 +313,9 @@ public class Helper {
 		// TODO Auto-generated method stub
 		for(int currentIndex = 0;currentIndex < array.length;currentIndex++)
 		{
-			//String abc = array[currentIndex].replaceAll(".*?\\(.*?","");
-			
+						
 			String abc = array[currentIndex].replaceAll("[-]"," ");
-			//String abc = array[currentIndex].replaceAll("[,\\.\\?:;!@\\*]","");
-			 //abc = abc.replaceAll("[{}]","");
-			 //abc = abc.replaceAll("[\\[\\]]","");
-			 
-			//abc = abc.replaceAll(".*?\\).*?","");
-			array[currentIndex] = abc;		
+						array[currentIndex] = abc;		
 			
 		}
 		System.out.println("HYPHEN");
@@ -351,16 +330,9 @@ public class Helper {
 	private void removeSpecialChar() {
 		// TODO Auto-generated method stub
 		for(int currentIndex = 0;currentIndex < array.length;currentIndex++)
-		{
-			//String abc = array[currentIndex].replaceAll(".*?\\(.*?","");
-			
+		{			
 			String abc = array[currentIndex].replaceAll("[,\\.\\?:;!@]$","");
-			//String abc = array[currentIndex].replaceAll("[,\\.\\?:;!@\\*]","");
-			 //abc = abc.replaceAll("[{}]","");
-			 //abc = abc.replaceAll("[\\[\\]]","");
-			 
-			//abc = abc.replaceAll(".*?\\).*?","");
-			array[currentIndex] = abc;		
+						array[currentIndex] = abc;		
 			
 		}
 		/*System.out.println("SPECIAL CHARACTER");
@@ -376,13 +348,11 @@ public class Helper {
 		// TODO Auto-generated method stub
 		for(int currentIndex = 0;currentIndex < array.length;currentIndex++)
 		{
-			//String abc = array[currentIndex].replaceAll(".*?\\(.*?","");
-			String abc = array[currentIndex].replaceAll("[()]","");
+						String abc = array[currentIndex].replaceAll("[()]","");
 			 abc = abc.replaceAll("[{}]","");
 			 abc = abc.replaceAll("[\\[\\]]","");
 			 
-			//abc = abc.replaceAll(".*?\\).*?","");
-			array[currentIndex] = abc;		
+						array[currentIndex] = abc;		
 			
 		}
 		/*System.out.println("PARANTHESIS");
@@ -398,11 +368,7 @@ public class Helper {
 		// TODO Auto-generated method stub
 		
 	
-		//array = temp2.split(" ");
-		
-		
-		//arrIndexWords = new ArrayList<String>(Arrays.asList(array));
-		
+				
 			for(int currentIndex = 0;currentIndex < array.length;currentIndex++)
 		{
 			
@@ -434,8 +400,7 @@ public class Helper {
 		String opr;
 		//removing single character
 		opr = temp2.replaceAll("(\\s.\\s)|(\\s.$)", " ");
-		//System.out.println(opr);
-		return opr;
+				return opr;
 	}
 
 	/*public void Display(Result resltObj) throws IOException {
@@ -447,32 +412,7 @@ public class Helper {
 		// TODO Auto-generated method stub
 		dict.makeDict(LexoIndexList,docID);
 		
-		/*ArrayList<String> LexoIndex = new ArrayList<String>();
-		LexoIndex.add("girish");
-		LexoIndex.add("dhanu");
-		LexoIndex.add("girish");
-		LexoIndex.add("raks");
-		LexoIndex.add("girish");
-		LexoIndex.add("raks");
-		ArrayList<String> LexoIndex2 = new ArrayList<String>();
-		LexoIndex2.add("girish");
-		LexoIndex2.add("sachin");
-		LexoIndex2.add("dhanu");
-		LexoIndex2.add("akash");
-		LexoIndex2.add("girish");
-		LexoIndex2.add("raks");
-		ArrayList<String> LexoIndex3 = new ArrayList<String>();
-		LexoIndex3.add("girish");
-		LexoIndex3.add("sachin");
-		LexoIndex3.add("dhanu");
-		LexoIndex3.add("akash");
-		LexoIndex3.add("girish");
-		LexoIndex3.add("ajay");
-		docID = 1;
-		dict.makeDict(LexoIndex,docID);
-		dict.makeDict(LexoIndex2,docID+1);
-		dict.makeDict(LexoIndex3,docID+2);*/
-	}
+			}
 	
 	
 	

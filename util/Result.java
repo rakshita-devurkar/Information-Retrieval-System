@@ -14,8 +14,7 @@ public class Result {
 	private String outputFileName2;
 	private String outputFileName3;
 	private String outputFileName4;
-	//public ArrayList<String> operationIDValues = new ArrayList<String>();
-	
+		
 	
 	public Result(String outputfile1, String outputfile2, String outputfile3, String outputfile4) {
 		// TODO Auto-generated constructor stub

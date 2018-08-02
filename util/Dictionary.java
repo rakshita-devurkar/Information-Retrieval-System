@@ -10,8 +10,7 @@ import java.util.TreeMap;
 
 public class Dictionary {
 
-	//int[] dictInfo =new int[2];
-	//int[] tempArr =new int[2];
+	
 	TreeMap<String, ArrayList<String>> dictionary = new TreeMap<String, ArrayList<String>>();
 	TreeMap<String, String> finalDictionary = new TreeMap<String, String>();
 	ArrayList<String> postingList = new ArrayList<String>();
@@ -49,8 +48,7 @@ public class Dictionary {
 				else
 					//when term is not present in dictionary
 				{
-					//int postListLength = postingList.size();
-					ArrayList<String> dictInfo =new ArrayList<String>();
+										ArrayList<String> dictInfo =new ArrayList<String>();
 					dictInfo.add(Integer.toString(docID)+","+1);
 					dictionary.put(currIndex, dictInfo);
 				}
@@ -58,7 +56,7 @@ public class Dictionary {
 			}
 			
 		}
-		//System.out.println();
+		
 	}
 	public void createPostingList() {
 		// TODO Auto-generated method stub
@@ -82,8 +80,7 @@ public class Dictionary {
 				postingList.add(currIndex);
 			}
 		}
-		
-	//System.out.println("done");			
+				
 	}
 	public void Display(Result resltObj) throws IOException {
 		// TODO Auto-generated method stub

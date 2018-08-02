@@ -30,12 +30,11 @@ public class informationretrieval {
 		String outputfile2 = "";
 		String outputfile3 = "";
 		String outputfile4 = "";
-		//String queryfile = "";
-		String strCurrLine = "";
+				String strCurrLine = "";
 		String temp = "";
 		String temp3 = "";
 		ArrayList<String> QueryList = new ArrayList<String>();
-		//StringBuilder strBuld = new StringBuilder();
+		
 		int docID = 0;
 		try
 		{
@@ -51,11 +50,9 @@ public class informationretrieval {
 				outputfile2 = "Postings.csv";	
 				outputfile3 = "DocsTable.txt";	
 				outputfile4 = args[1];
-				//queryfile = args[4];
-			}
+							}
 			
 			FileProcessor fprObj;
-			//FileProcessor fprqrObj = new FileProcessor(queryfile);
 			Helper hObj = new Helper();
 			Dictionary dict = new Dictionary();
 			Result resltObj = new Result(outputfile1,outputfile2,outputfile3,outputfile4);
@@ -66,19 +63,7 @@ public class informationretrieval {
 			File folder = new File(inputFilePath);
 			File[] fileList = folder.listFiles();
 			
-			//Path dir = Paths.get(inputFilePath);
-			
-			/*try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir)) {
-			    for (Path file: stream) {
-			        System.out.println(file.getFileName());
-			    }
-			} catch (IOException | DirectoryIteratorException x) {
-			    // IOException can never be thrown by the iteration.
-			    // In this snippet, it can only be thrown by newDirectoryStream.
-			    System.err.println(x);
-			    x.printStackTrace();
-			}*/
-			
+					
 			for(File currFile : fileList)
 			{
 				if(currFile.isFile())
@@ -90,9 +75,7 @@ public class informationretrieval {
 					int checkRate = 0;
 					//incrementing doc id
 					docID ++;
-					DocName.put(docID, currFile.getName());
-					//File file = new File(currFile.toString());
-					FileReader fileReader = new FileReader(currFile);
+					DocName.put(docID, currFile.getName());					FileReader fileReader = new FileReader(currFile);
 					BufferedReader bufferedReader = new BufferedReader(fileReader);
 					StringBuffer stringBuffer = new StringBuffer();
 					String line = "";
@@ -114,7 +97,7 @@ public class informationretrieval {
 				{
 					if(!currLine.isEmpty())
 					{
-					//System.out.println(currLine);	
+						
 						/*if(currLine.equalsIgnoreCase("<TITLE>")||currLine.equalsIgnoreCase("</TITLE>"))
 						{
 							strTitle = strTitle + currLine;
@@ -136,11 +119,7 @@ public class informationretrieval {
 					dtb.getRating(temp2,docID,checkRate);
 				}
 				
-				//System.out.println("Girish");
-				
-				
-				//System.out.println(temp2);
-				hObj.removeTags(temp2);
+								hObj.removeTags(temp2);
 				
 				hObj.createDictionary(dict,docID);
 				}
@@ -156,18 +135,14 @@ public class informationretrieval {
 			{
 				if(!strCurrLine.isEmpty())
 				{
-				//System.out.println(currLine);	
-					strCurrLine = strCurrLine.toLowerCase();
+									strCurrLine = strCurrLine.toLowerCase();
 					QueryList.add(strCurrLine);
 					
 				}
 				System.out.println("Enter command");
 			}
 			
-			//QueryList.add("and thriller action");
-			//QueryList.add("or thriller");
-			//QueryList.add("and abc ");
-			qrpObj.processQuery(QueryList,DocName);
+						qrpObj.processQuery(QueryList,DocName);
 			
 			dict.Display(resltObj);
 			dtb.Display(resltObj,docID);
